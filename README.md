@@ -17,5 +17,27 @@
 ##WickedChart jar Download
 * http://kurtomerfaruk.com/wickedcharts.rar
 
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=g-GF-w1jwR0
+" target="_blank"><img src="http://img.youtube.com/vi/g-GF-w1jwR0/0.jpg" 
+alt="PrimeFaces Admin LTE" width="650" height="400" border="10" /></a>
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=L1A8_nBnoss
+" target="_blank"><img src="http://img.youtube.com/vi/L1A8_nBnoss/0.jpg" 
+alt="PrimeFaces Admin LTE 2" width="650" height="400" border="10" /></a>
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&veU1WxnwYp8g
+" target="_blank"><img src="http://img.youtube.com/vi/eU1WxnwYp8g/0.jpg" 
+alt="PrimeFaces Admin CRUD"width="650" height="400" border="10" /></a>
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=KGh3ZpL3-ZI
+" target="_blank"><img src="http://img.youtube.com/vi/KGh3ZpL3-ZI/0.jpg" 
+alt="PrimeFaces Admin LTE Audit" width="650" height="400" border="10" /></a>
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=Yzo67A7g698
+" target="_blank"><img src="http://img.youtube.com/vi/Yzo67A7g698/0.jpg" 
+alt="PrimeFaces Admin LTE Menu Searching" width="650" height="400" border="10" /></a>
+
+
+
 
 
