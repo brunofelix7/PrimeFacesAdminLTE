@@ -37,7 +37,9 @@ alt="PrimeFaces Admin LTE Audit" width="650" height="400" border="10" /></a>
 " target="_blank"><img src="http://img.youtube.com/vi/Yzo67A7g698/0.jpg" 
 alt="PrimeFaces Admin LTE Menu Searching" width="650" height="400" border="10" /></a>
 
-
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=r2jyjhIFCpA
+" target="_blank"><img src="http://img.youtube.com/vi/r2jyjhIFCpA/0.jpg" 
+alt="PrimeFaces Admin LTE Captcha" width="650" height="400" border="10" /></a>
 
 
 
