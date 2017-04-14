@@ -41,8 +41,8 @@
                             <p:columnToggler datasource="datalist" trigger="toggler" >
                                 <p:ajax event="toggle" listener="#{filmTextController.onToggle}" />
                             </p:columnToggler>
-                            <p:commandButton id="toggler" type="button" value="Columns" class="btn-primary" icon="fa fa-list"/>
-                            <p:commandButton value="Save" actionListener="#{filmTextController.columnSave()}" styleClass="btn-success" icon="fa fa-edit" update=":growl,@this"/>
+                            <p:commandButton id="toggler" type="button" value="#{messages.Columns}" class="btn-primary" icon="fa fa-list"/>
+                            <p:commandButton value="#{messages.Save}" actionListener="#{filmTextController.columnSave()}" styleClass="btn-success" icon="fa fa-edit" update=":growl,@this"/>
                         </div>
                     </div>
                 </div>
@@ -54,8 +54,11 @@
                     <h:outputText value="#{column.header}" />
                 </f:facet>
 
-                <h:outputText value="#{item[column.property]}" >
+                <h:outputText value="#{item[column.property]}" rendered="#{column.date}">
+                    <f:convertDateTime pattern="dd.MM.yyyy"/>
                 </h:outputText>
+                
+                <h:outputText value="#{item[column.property]}" rendered="#{!column.date}"/>
 
             </p:columns>
 
@@ -63,8 +66,8 @@
                 <div class="footer-left">
                     <p:commandButton id="createButton" styleClass="btn-primary" icon="fa fa-plus"   value="#{messages.Create}" actionListener="#{filmTextController.prepareCreate}" update=":FilmTextCreateForm:FilmTextCreateForm" oncomplete="PF('FilmTextCreateDialog').show()" onstart="PF('Loading').show()" onsuccess="PF('Loading').hide()"/>
                     <p:commandButton id="viewButton"   styleClass="btn-primary" icon="fa fa-search" value="#{messages.View}" update=":FilmTextViewForm:FilmTextViewForm" oncomplete="PF('FilmTextViewDialog').show()" disabled="#{empty filmTextController.selected}" onstart="PF('Loading').show()" onsuccess="PF('Loading').hide()"/>
-                    <p:commandButton id="editButton"   styleClass="btn-primary" icon="fa fa-pencil" value="#{messages.Edit}" update=":FilmTextEditForm:FilmTextEditForm" oncomplete="PF('FilmTextEditDialog').show()" disabled="#{empty filmTextController.selected}" onstart="PF('Loading').show()" onsuccess="PF('Loading').hide()"/>
-                    <p:commandButton id="deleteButton" styleClass="btn-primary" icon="fa fa-trash"  value="#{messages.Delete}" actionListener="#{filmTextController.delete}" update=":growl,datalist" disabled="#{empty filmTextController.selected}" onstart="PF('Loading').show()" onsuccess="PF('Loading').hide()">
+                    <p:commandButton id="editButton"   styleClass="btn-primary" icon="fa fa-pencil" value="#{messages.Edit}" update=":FilmTextEditForm:FilmTextEditForm" oncomplete="PF('FilmTextEditDialog').show()" disabled="#{empty filmTextController.selected or !loginController.hasRole('ADMIN')}" onstart="PF('Loading').show()" onsuccess="PF('Loading').hide()"/>
+                    <p:commandButton id="deleteButton" styleClass="btn-primary" icon="fa fa-trash"  value="#{messages.Delete}" actionListener="#{filmTextController.delete}" update=":growl,datalist" disabled="#{empty filmTextController.selected or !loginController.hasRole('ADMIN')}" onstart="PF('Loading').show()" onsuccess="PF('Loading').hide()">
                         <p:confirm header="#{messages.ConfirmationHeader}" message="#{messages.ConfirmDeleteMessage}" icon="fa fa-warning"/>
                     </p:commandButton>
                 </div>

@@ -8,7 +8,9 @@ import javax.faces.event.ActionEvent;
 
 /**
  *
- * @author Omer Faruk KURT e-mail:kurtomerfaruk@gmail.com
+ * @author Omer Faruk KURT 
+ * @e-mail kurtomerfaruk@gmail.com
+ * @blog http://kurtomerfaruk.com
  */
 @ManagedBean
 @ViewScoped

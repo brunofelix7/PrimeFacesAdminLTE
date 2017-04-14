@@ -1,13 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.kurtomerfaruk.admin.functions;
 
 /**
  *
- * @author Omer Faruk KURT
+ * @author Omer Faruk KURT 
+ * @e-mail kurtomerfaruk@gmail.com
+ * @blog http://kurtomerfaruk.com
  */
 public class Functions {
 

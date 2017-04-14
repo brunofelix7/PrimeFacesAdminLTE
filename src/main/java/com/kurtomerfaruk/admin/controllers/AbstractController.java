@@ -27,7 +27,9 @@ import org.primefaces.model.Visibility;
 
 /**
  *
- * @author Omer Faruk KURT e-mail:kurtomerfaruk@gmail.com
+ * @author Omer Faruk KURT 
+ * @e-mail kurtomerfaruk@gmail.com
+ * @blog http://kurtomerfaruk.com
  * @param <T>
  */
 public class AbstractController<T> {

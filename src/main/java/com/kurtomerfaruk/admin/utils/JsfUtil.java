@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.kurtomerfaruk.admin.utils;
 
 import java.util.Iterator;
@@ -15,7 +10,9 @@ import javax.faces.context.FacesContext;
 
 /**
  *
- * @author Omer Faruk KURT kurtomerfaruk@gmail.com
+ * @author Omer Faruk KURT 
+ * @e-mail kurtomerfaruk@gmail.com
+ * @blog http://kurtomerfaruk.com
  */
 public class JsfUtil {
 

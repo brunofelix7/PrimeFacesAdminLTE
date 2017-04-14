@@ -9,11 +9,12 @@ import java.util.Map;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
-import javax.faces.event.ValueChangeEvent;
 
 /**
  *
- * @author Omer Faruk KURT e-mail:kurtomerfaruk@gmail.com
+ * @author Omer Faruk KURT 
+ * @e-mail kurtomerfaruk@gmail.com
+ * @blog http://kurtomerfaruk.com
  */
 @ManagedBean
 @ViewScoped

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.kurtomerfaruk.admin.filters;
 
 import java.io.IOException;
@@ -20,6 +15,8 @@ import javax.servlet.http.HttpSession;
 /**
  *
  * @author Omer Faruk KURT
+ * @e-mail kurtomerfaruk@gmail.com
+ * @blog http://kurtomerfaruk.com
  */
 @WebFilter(filterName = "AuthorizationFilter", urlPatterns = {"/*"})
 public class AuthorizationFilter implements Filter {
@@ -36,19 +33,19 @@ public class AuthorizationFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         // check whether session variable is set
-            HttpServletRequest req = (HttpServletRequest) request;
-            HttpServletResponse res = (HttpServletResponse) response;
-            HttpSession ses = req.getSession(false);
-            //  allow user to proccede if url is login.xhtml or user logged in or user is accessing any page in //public folder
-            String reqURI = req.getRequestURI();
-            if (reqURI.indexOf("/login.xhtml") >= 0 || (ses != null && ses.getAttribute("staff") != null)
-                    || reqURI.contains("javax.faces.resource")) {
-                chain.doFilter(request, response);
-            } else // user didn't log in but asking for a page that is not allowed so take user to login page
-            {
-                res.sendRedirect(req.getContextPath()+ "/login.xhtml");  // Anonymous user. Redirect to login page
-                req.removeAttribute("staff");
-            }
+        HttpServletRequest req = (HttpServletRequest) request;
+        HttpServletResponse res = (HttpServletResponse) response;
+        HttpSession ses = req.getSession(false);
+        //  allow user to proccede if url is login.xhtml or user logged in or user is accessing any page in //public folder
+        String reqURI = req.getRequestURI();
+        if (reqURI.indexOf("/login.xhtml") >= 0 || (ses != null && ses.getAttribute("staff") != null)
+                || reqURI.contains("javax.faces.resource")) {
+            chain.doFilter(request, response);
+        } else // user didn't log in but asking for a page that is not allowed so take user to login page
+        {
+            res.sendRedirect(req.getContextPath() + "/login.xhtml");  // Anonymous user. Redirect to login page
+            req.removeAttribute("staff");
+        }
     }
 
     @Override

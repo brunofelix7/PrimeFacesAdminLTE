@@ -9,7 +9,7 @@ package com.kurtomerfaruk.admin.controllers;
  *
  * @author Omer Faruk KURT e-mail:kurtomerfaruk@gmail.com
  * @email kurtomerfaruk@gmail.com
- * @blog http://kurtomerfaruk.wordpress.com
+ * @blog http://kurtomerfaruk.com
  */
 import org.primefaces.push.annotation.OnMessage;
 import org.primefaces.push.annotation.PushEndpoint;

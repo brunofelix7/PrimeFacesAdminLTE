@@ -6,8 +6,9 @@ import javax.faces.bean.ViewScoped;
 
 /**
  *
- * @author Omer Faruk KURT
- * @Created on date 19/10/2016 15:19:37
+ * @author Omer Faruk KURT 
+ * @e-mail kurtomerfaruk@gmail.com
+ * @blog http://kurtomerfaruk.com
  */
 @ManagedBean
 @ViewScoped

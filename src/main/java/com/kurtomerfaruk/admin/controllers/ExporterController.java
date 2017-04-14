@@ -7,6 +7,8 @@ import javax.faces.bean.ManagedBean;
 /**
  * 
  * @author Omer Faruk KURT 
+ * @e-mail kurtomerfaruk@gmail.com
+ * @blog http://kurtomerfaruk.com
  * @Created on date 14/07/2016 21:26:57 
  */
 @ManagedBean

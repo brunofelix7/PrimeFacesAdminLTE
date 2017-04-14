@@ -49,8 +49,8 @@
                             <p:columnToggler datasource="datalist" trigger="toggler" >
                                 <p:ajax event="toggle" listener="#{addressController.onToggle}" />
                             </p:columnToggler>
-                            <p:commandButton id="toggler" type="button" value="Columns" class="btn-primary" icon="fa fa-list"/>
-                            <p:commandButton value="Save" actionListener="#{addressController.columnSave()}" styleClass="btn-success" icon="fa fa-edit" update=":growl,@this"/>
+                            <p:commandButton id="toggler" type="button" value="#{messages.Columns}" class="btn-primary" icon="fa fa-list"/>
+                            <p:commandButton value="#{messages.Save}" actionListener="#{addressController.columnSave()}" styleClass="btn-success" icon="fa fa-edit" update=":growl,@this"/>
                         </div>
                     </div>
                 </div>
@@ -62,89 +62,21 @@
                     <h:outputText value="#{column.header}" />
                 </f:facet>
 
-                <h:outputText value="#{item[column.property]}" >
+                <h:outputText value="#{item[column.property]}" rendered="#{column.date}">
+                    <f:convertDateTime pattern="dd.MM.yyyy"/>
                 </h:outputText>
+
+                <h:outputText value="#{item[column.property]}" rendered="#{!column.date}"/>
 
             </p:columns>
 
-<!--            <p:column sortBy="#{item.addressId}" filterBy="#{item.addressId}">
-                <f:facet name="header">
-                    <h:outputText value="#{messages.ListAddressTitle_addressId}"/>
-                </f:facet>
-                <h:outputText value="#{item.addressId}"/>
-            </p:column>
-
-
-            <p:column sortBy="#{item.address}" filterBy="#{item.address}">
-                <f:facet name="header">
-                    <h:outputText value="#{messages.ListAddressTitle_address}"/>
-                </f:facet>
-                <h:outputText value="#{item.address}"/>
-            </p:column>
-
-
-            <p:column sortBy="#{item.address2}" filterBy="#{item.address2}">
-                <f:facet name="header">
-                    <h:outputText value="#{messages.ListAddressTitle_address2}"/>
-                </f:facet>
-                <h:outputText value="#{item.address2}"/>
-            </p:column>
-
-
-            <p:column sortBy="#{item.district}" filterBy="#{item.district}">
-                <f:facet name="header">
-                    <h:outputText value="#{messages.ListAddressTitle_district}"/>
-                </f:facet>
-                <h:outputText value="#{item.district}"/>
-            </p:column>
-
-
-            <p:column sortBy="#{item.postalCode}" filterBy="#{item.postalCode}">
-                <f:facet name="header">
-                    <h:outputText value="#{messages.ListAddressTitle_postalCode}"/>
-                </f:facet>
-                <h:outputText value="#{item.postalCode}"/>
-            </p:column>
-
-
-            <p:column sortBy="#{item.phone}" filterBy="#{item.phone}">
-                <f:facet name="header">
-                    <h:outputText value="#{messages.ListAddressTitle_phone}"/>
-                </f:facet>
-                <h:outputText value="#{item.phone}"/>
-            </p:column>
-
-
-            <p:column sortBy="#{item.location}" filterBy="#{item.location}">
-                <f:facet name="header">
-                    <h:outputText value="#{messages.ListAddressTitle_location}"/>
-                </f:facet>
-                <h:outputText value="#{item.location}"/>
-            </p:column>
-
-
-            <p:column sortBy="#{item.lastUpdate}" filterBy="#{item.lastUpdate}">
-                <f:facet name="header">
-                    <h:outputText value="#{messages.ListAddressTitle_lastUpdate}"/>
-                </f:facet>
-                <h:outputText value="#{item.lastUpdate}">
-                    <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
-                </h:outputText>
-            </p:column>
-
-            <p:column sortBy="#{item.cityId.city}" filterBy="#{item.cityId.city}">
-                <f:facet name="header">
-                    <h:outputText value="#{messages.CityHeading}"/>
-                </f:facet>
-                <h:outputText value="#{item.cityId.city}"/>
-            </p:column>-->
 
             <f:facet name="{buttons}">
                 <div class="footer-left">
                     <p:commandButton id="createButton" styleClass="btn btn-primary" icon="fa fa-plus"   value="#{messages.Create}" actionListener="#{addressController.prepareCreate}" update=":AddressCreateForm:AddressCreateForm" oncomplete="PF('AddressCreateDialog').show()" onstart="PF('Loading').show()" onsuccess="PF('Loading').hide()"/>
                     <p:commandButton id="viewButton"   styleClass="btn btn-primary" icon="fa fa-search" value="#{messages.View}" update=":AddressViewForm:AddressViewForm" oncomplete="PF('AddressViewDialog').show()" disabled="#{empty addressController.selected}" onstart="PF('Loading').show()" onsuccess="PF('Loading').hide()"/>
-                    <p:commandButton id="editButton"   styleClass="btn btn-primary" icon="fa fa-pencil" value="#{messages.Edit}" update=":AddressEditForm:AddressEditForm" oncomplete="PF('AddressEditDialog').show()" disabled="#{empty addressController.selected}" onstart="PF('Loading').show()" onsuccess="PF('Loading').hide()"/>
-                    <p:commandButton id="deleteButton" styleClass="btn btn-primary" icon="fa fa-trash"  value="#{messages.Delete}" actionListener="#{addressController.delete}" update=":growl,datalist" disabled="#{empty addressController.selected}" onstart="PF('Loading').show()" onsuccess="PF('Loading').hide()">
+                    <p:commandButton id="editButton"   styleClass="btn btn-primary" icon="fa fa-pencil" value="#{messages.Edit}" update=":AddressEditForm:AddressEditForm" oncomplete="PF('AddressEditDialog').show()" disabled="#{empty addressController.selected or !loginController.hasRole('ADMIN')}" onstart="PF('Loading').show()" onsuccess="PF('Loading').hide()"/>
+                    <p:commandButton id="deleteButton" styleClass="btn btn-primary" icon="fa fa-trash"  value="#{messages.Delete}" actionListener="#{addressController.delete}" update=":growl,datalist" disabled="#{empty addressController.selected or !loginController.hasRole('ADMIN')}" onstart="PF('Loading').show()" onsuccess="PF('Loading').hide()">
                         <p:confirm header="#{messages.ConfirmationHeader}" message="#{messages.ConfirmDeleteMessage}" icon="fa fa-warning"/>
                     </p:commandButton>
                 </div>

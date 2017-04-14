@@ -46,8 +46,8 @@
                             <p:columnToggler datasource="datalist" trigger="toggler" >
                                 <p:ajax event="toggle" listener="#{customerController.onToggle}" />
                             </p:columnToggler>
-                            <p:commandButton id="toggler" type="button" value="Columns" class="btn-primary" icon="fa fa-list"/>
-                            <p:commandButton value="Save" actionListener="#{customerController.columnSave()}" styleClass="btn-success" icon="fa fa-edit" update=":growl,@this"/>
+                            <p:commandButton id="toggler" type="button" value="#{messages.Columns}" class="btn-primary" icon="fa fa-list"/>
+                            <p:commandButton value="#{messages.Save}" actionListener="#{customerController.columnSave()}" styleClass="btn-success" icon="fa fa-edit" update=":growl,@this"/>
                         </div>
                     </div>
                 </div>
@@ -59,8 +59,11 @@
                     <h:outputText value="#{column.header}" />
                 </f:facet>
 
-                <h:outputText value="#{item[column.property]}" >
+                <h:outputText value="#{item[column.property]}" rendered="#{column.date}">
+                    <f:convertDateTime pattern="dd.MM.yyyy"/>
                 </h:outputText>
+                
+                <h:outputText value="#{item[column.property]}" rendered="#{!column.date}"/>
 
             </p:columns>
 
@@ -68,8 +71,8 @@
                 <div class="footer-left">
                     <p:commandButton id="createButton" styleClass="btn btn-primary" icon="fa fa-plus"   value="#{messages.Create}" actionListener="#{customerController.prepareCreate}" update=":CustomerCreateForm:CustomerCreateForm" oncomplete="PF('CustomerCreateDialog').show()" onstart="PF('Loading').show()" onsuccess="PF('Loading').hide()"/>
                     <p:commandButton id="viewButton"   styleClass="btn btn-primary" icon="fa fa-search" value="#{messages.View}" update=":CustomerViewForm:CustomerViewForm" oncomplete="PF('CustomerViewDialog').show()" disabled="#{empty customerController.selected}" onstart="PF('Loading').show()" onsuccess="PF('Loading').hide()"/>
-                    <p:commandButton id="editButton"   styleClass="btn btn-primary" icon="fa fa-pencil" value="#{messages.Edit}" update=":CustomerEditForm:CustomerEditForm" oncomplete="PF('CustomerEditDialog').show()" disabled="#{empty customerController.selected}" onstart="PF('Loading').show()" onsuccess="PF('Loading').hide()"/>
-                    <p:commandButton id="deleteButton" styleClass="btn btn-primary" icon="fa fa-trash"  value="#{messages.Delete}" actionListener="#{customerController.delete}" update=":growl,datalist" disabled="#{empty customerController.selected}" onstart="PF('Loading').show()" onsuccess="PF('Loading').hide()">
+                    <p:commandButton id="editButton"   styleClass="btn btn-primary" icon="fa fa-pencil" value="#{messages.Edit}" update=":CustomerEditForm:CustomerEditForm" oncomplete="PF('CustomerEditDialog').show()" disabled="#{empty customerController.selected or !loginController.hasRole('ADMIN')}" onstart="PF('Loading').show()" onsuccess="PF('Loading').hide()"/>
+                    <p:commandButton id="deleteButton" styleClass="btn btn-primary" icon="fa fa-trash"  value="#{messages.Delete}" actionListener="#{customerController.delete}" update=":growl,datalist" disabled="#{empty customerController.selected or !loginController.hasRole('ADMIN')}" onstart="PF('Loading').show()" onsuccess="PF('Loading').hide()">
                         <p:confirm header="#{messages.ConfirmationHeader}" message="#{messages.ConfirmDeleteMessage}" icon="fa fa-warning"/>
                     </p:commandButton>
                 </div>

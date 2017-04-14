@@ -25,9 +25,9 @@ alt="PrimeFaces Admin LTE" width="650" height="400" border="10" /></a>
 " target="_blank"><img src="http://img.youtube.com/vi/L1A8_nBnoss/0.jpg" 
 alt="PrimeFaces Admin LTE 2" width="650" height="400" border="10" /></a>
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&veU1WxnwYp8g
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=eU1WxnwYp8g
 " target="_blank"><img src="http://img.youtube.com/vi/eU1WxnwYp8g/0.jpg" 
-alt="PrimeFaces Admin CRUD"width="650" height="400" border="10" /></a>
+alt="PrimeFaces Admin LTE CRUD" width="650" height="400" border="10" /></a>
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=KGh3ZpL3-ZI
 " target="_blank"><img src="http://img.youtube.com/vi/KGh3ZpL3-ZI/0.jpg" 
@@ -40,6 +40,10 @@ alt="PrimeFaces Admin LTE Menu Searching" width="650" height="400" border="10" /
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=r2jyjhIFCpA
 " target="_blank"><img src="http://img.youtube.com/vi/r2jyjhIFCpA/0.jpg" 
 alt="PrimeFaces Admin LTE Captcha" width="650" height="400" border="10" /></a>
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=U8zM98x2Cr8
+" target="_blank"><img src="http://img.youtube.com/vi/U8zM98x2Cr8/0.jpg" 
+alt="PrimeFaces Admin LTE Internationalization" width="650" height="400" border="10" /></a>
 
 
 

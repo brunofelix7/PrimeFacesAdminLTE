@@ -23,7 +23,9 @@ import org.primefaces.push.EventBusFactory;
 
 /**
  *
- * @author Omer Faruk KURT e-mail:kurtomerfaruk@gmail.com
+ * @author Omer Faruk KURT 
+ * @e-mail kurtomerfaruk@gmail.com
+ * @blog http://kurtomerfaruk.com
  */
 @ManagedBean
 @SessionScoped
